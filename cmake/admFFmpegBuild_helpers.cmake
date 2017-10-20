@@ -273,7 +273,7 @@ MACRO(ADM_FF_BUILD_UNIX_STYLE)
 
     if (ADM_CPU_X86)
         file(READ ${FFMPEG_BINARY_DIR}/config.h FF_CONFIG_H)
-        string(REGEX MATCH "#define[ ]+HAVE_YASM[ ]+1" FF_YASM "${FF_CONFIG_H}")
+        string(REGEX MATCH "#define[ ]+HAVE_X86ASM[ ]+1" FF_YASM "${FF_CONFIG_H}")
 
         if (NOT FF_YASM)
             message(FATAL_ERROR "Yasm was not found.")
