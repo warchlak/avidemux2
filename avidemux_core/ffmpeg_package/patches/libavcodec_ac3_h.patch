@@ -1,8 +1,6 @@
-diff --git libavcodec/ac3tab.h libavcodec/ac3tab.h
-index 74cbd9e..7882896 100644
---- libavcodec/ac3tab.h
-+++ libavcodec/ac3tab.h
-@@ -35,7 +35,7 @@
+--- libavcodec/ac3tab.h.orig	2017-09-12 02:51:32.000000000 +0200
++++ libavcodec/ac3tab.h	2017-10-20 21:57:43.568220799 +0200
+@@ -29,7 +29,7 @@
  
  extern const uint16_t ff_ac3_frame_size_tab[38][3];
  extern const uint8_t  ff_ac3_channels_tab[8];

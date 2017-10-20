@@ -1,5 +1,5 @@
---- libavcodec/nvenc.c.org	2017-04-17 08:23:35.667815437 +0200
-+++ libavcodec/nvenc.c	2017-04-17 08:28:14.842850247 +0200
+--- libavcodec/nvenc.c.orig	2017-10-20 21:09:39.349218479 +0200
++++ libavcodec/nvenc.c	2017-10-20 21:09:39.352218460 +0200
 @@ -40,11 +40,11 @@
      AV_PIX_FMT_YUV420P,
      AV_PIX_FMT_NV12,
@@ -17,7 +17,7 @@
      AV_PIX_FMT_NONE
  };
  
-@@ -1063,11 +1063,12 @@
+@@ -1161,11 +1161,12 @@
  {
      switch (pix_fmt) {
      case AV_PIX_FMT_YUV420P:
@@ -31,7 +31,7 @@
      case AV_PIX_FMT_YUV444P:
          return NV_ENC_BUFFER_FORMAT_YUV444_PL;
      case AV_PIX_FMT_YUV444P16:
-@@ -1076,6 +1077,7 @@
+@@ -1174,6 +1175,7 @@
          return NV_ENC_BUFFER_FORMAT_ARGB;
      case AV_PIX_FMT_0BGR32:
          return NV_ENC_BUFFER_FORMAT_ABGR;
@@ -39,9 +39,9 @@
      default:
          return NV_ENC_BUFFER_FORMAT_UNDEFINED;
      }
-@@ -1316,10 +1318,33 @@
- 
-     return NULL;
+@@ -1449,10 +1451,33 @@
+     av_fifo_generic_read(ctx->unused_surface_queue, &tmp_surf, sizeof(tmp_surf), NULL);
+     return tmp_surf;
  }
 +/**
 +        MEANX
@@ -73,7 +73,7 @@
      int dst_linesize[4] = {
          lock_buffer_params->pitch,
          lock_buffer_params->pitch,
-@@ -1345,6 +1370,34 @@
+@@ -1478,6 +1503,34 @@
                    avctx->width, avctx->height);
  
      return 0;
