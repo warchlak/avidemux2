@@ -25,6 +25,7 @@
 
 static int currentVideoCodec=0;
 
+/* TODO Copy - not translated */
 ADM_videoEncoderDesc copyDesc={
         "Copy",
         "Copy",

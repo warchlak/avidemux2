@@ -1890,6 +1890,7 @@ void setupMenus(void)
     for(uint32_t i=0;i<nbVid;i++)
     {
         ADM_ve6_getEncoderInfo(i,&name,&maj,&mn,&pa);
+        /* translate here? */
         WIDGET(comboBoxVideo)->addItem(name);
     }
 
