@@ -17,8 +17,3 @@ avidemux/oldFiles/
 myBuild*
 oprofile_data
 avidemux/winInstaller/AvidemuxVersion.nsh
-adm2.config
-adm2.creator
-adm2.creator.user
-adm2.files
-adm2.includes
